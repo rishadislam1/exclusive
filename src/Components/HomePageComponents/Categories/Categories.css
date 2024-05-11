@@ -1,0 +1,10 @@
+.categories{
+    transition: all 1s linear ;
+
+}
+
+.categories:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}

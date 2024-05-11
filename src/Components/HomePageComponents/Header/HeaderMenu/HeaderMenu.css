@@ -1,0 +1,20 @@
+ul{
+    list-style: none;
+}
+
+.vl {
+    border-left: 1px solid gray;
+    height: 250px;
+    margin-top: -18px;
+  }
+
+  @media (max-width: 768px) {
+   
+}
+
+/* Media query for mobile devices (up to 576px width) */
+@media (max-width: 576px) {
+    .vl{
+        display:  none;
+    }
+}

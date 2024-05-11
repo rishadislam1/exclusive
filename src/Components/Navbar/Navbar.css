@@ -1,0 +1,20 @@
+.formSearch{
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .formSearch {
+        width: 250px; /* Adjust width for tablet devices */
+    }
+}
+
+/* Media query for mobile devices (up to 576px width) */
+@media (max-width: 576px) {
+    .formSearch {
+        width: 200px; /* Adjust width for mobile devices */
+    }
+}
+
+.menuhr{
+    border: 1px solid rgb(112, 112, 112);
+}

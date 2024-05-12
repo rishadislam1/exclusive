@@ -1,0 +1,24 @@
+.categoriesText{
+    color: #00FF66;
+}
+
+.radioImage{
+
+    border: 0;
+    border-radius: 50%;
+    background: radial-gradient( #2d2d2d 60%, black 75%)
+}
+
+.hour{
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 15px;
+}

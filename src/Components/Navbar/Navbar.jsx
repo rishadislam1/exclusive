@@ -13,7 +13,7 @@ import { IoCartOutline } from "react-icons/io5";
 export default function NavbarMain() {
   return (
     <div>
-      <Navbar expand="lg" className="">
+      <Navbar expand="lg" className="container mx-auto">
         <Container fluid>
           <Link to="/" className="text-decoration-none">
             {" "}

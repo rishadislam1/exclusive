@@ -8,11 +8,11 @@ import { CiYoutube } from "react-icons/ci";
 
 export default function Footer() {
   return (
-    <div className="mt-5">
+    <div className="mt-5 ">
       {/* <!-- Footer --> */}
       <footer className="text-center text-lg-start bg-black text-light ">
         {/* <!-- Section: Social media --> */}
-        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom ">
           {/* <!-- Left --> */}
 
           {/* <!-- Left -->
@@ -23,8 +23,8 @@ export default function Footer() {
         {/* <!-- Section: Social media -->
 
   <!-- Section: Links  --> */}
-        <section className="">
-          <div className="container text-center text-md-start mt-5">
+        <section className="container mx-auto">
+          <div className=" text-center text-md-start mt-5">
             {/* <!-- Grid row --> */}
             <div className="row mt-3">
               {/* <!-- Grid column --> */}

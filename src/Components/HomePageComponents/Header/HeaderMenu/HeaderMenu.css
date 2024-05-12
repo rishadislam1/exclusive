@@ -2,9 +2,15 @@ ul{
     list-style: none;
 }
 
+li{
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
 .vl {
     border-left: 1px solid gray;
-    height: 250px;
+    height: 400px;
     margin-top: -18px;
   }
 

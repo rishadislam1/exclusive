@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -27,23 +27,47 @@ export default function NavbarMain() {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Link to="/" className="text-decoration-none">
+                <NavLink to="/"  className={`({ isActive, isPending }) =>
+                    isActive
+                        ? "active"
+                        : isPending
+                            ? "pending"
+                            : ""
+                menu`}>
                   {" "}
                   <Nav.Link>Home</Nav.Link>
-                </Link>
+                </NavLink>
 
-                <Link to="/" className="text-decoration-none">
+                <NavLink className={`({ isActive, isPending }) =>
+                    isActive
+                        ? "active"
+                        : isPending
+                            ? "pending"
+                            : ""
+                menu`} to="/contact" >
                   {" "}
                   <Nav.Link>Contact</Nav.Link>
-                </Link>
-                <Link to="/" className="text-decoration-none">
+                </NavLink>
+                <NavLink to="/about" className={`({ isActive, isPending }) =>
+                    isActive
+                        ? "active"
+                        : isPending
+                            ? "pending"
+                            : ""
+                menu`}>
                   {" "}
                   <Nav.Link>About</Nav.Link>
-                </Link>
-                <Link to="/" className="text-decoration-none">
+                </NavLink>
+                <NavLink to="/signup" className={`({ isActive, isPending }) =>
+                    isActive
+                        ? "active"
+                        : isPending
+                            ? "pending"
+                            : ""
+                menu`}>
                   {" "}
                   <Nav.Link>SignUp</Nav.Link>
-                </Link>
+                </NavLink>
               </Nav>
             </div>
 

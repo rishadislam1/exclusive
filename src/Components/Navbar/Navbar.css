@@ -18,3 +18,13 @@
 .menuhr{
     border: 1px solid rgb(112, 112, 112);
 }
+
+.active{
+    border-bottom: 1px solid gray;
+    text-decoration: none;
+}
+
+.menu{
+    text-decoration: none;
+    margin-left: 40px;
+}

@@ -16,7 +16,7 @@ export default function HeaderMenu() {
             <li>Groceries & Pets</li>
             <li>Health & Beauty</li>
         </ul>
-        <div class="vl"></div>
+        <div className="vl"></div>
     </div>
   )
 }

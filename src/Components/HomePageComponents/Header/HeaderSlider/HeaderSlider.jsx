@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 import "./HeaderSlider.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import { FaApple } from "react-icons/fa";
+import {FaArrowRightLong} from "react-icons/fa6";
 // import required modules
 
 export default function HeaderSlider() {
@@ -28,41 +29,107 @@ export default function HeaderSlider() {
         className="mySwiper"
       >
         <SwiperSlide className="d-flex gap-5 bg-black text-light">
-          <div className="d-flex gap-3">
-            <FaApple style={{ fontSize: "20px" }} />
-            <p>iPhone 14 Series</p>
-          </div>
           <div>
-            <img src={slider1} alt="" srcset="" />
+            <div className="d-flex gap-3">
+              <FaApple style={{fontSize: "20px"}}/>
+              <p>iPhone 14 Series</p>
+
+            </div>
+            <button className="bg-transparent text-white border-0 "><span className="border-bottom border-0 ">Shop Now</span> <FaArrowRightLong/>
+            </button>
+          </div>
+
+
+          <div>
+            <img src={slider1} alt=""/>
           </div>
         </SwiperSlide>
+
         <SwiperSlide className="d-flex gap-5 bg-black text-light">
-          <div className="d-flex gap-3">
-            <FaApple style={{ fontSize: "20px" }} />
-            <p>iPhone 14 Series</p>
-          </div>
           <div>
-            <img src={slider1} alt="" srcset="" />
+            <div className="d-flex gap-3">
+              <FaApple style={{fontSize: "20px"}}/>
+              <p>iPhone 14 Series</p>
+
+            </div>
+            <button className="bg-transparent text-white border-0 "><span className="border-bottom border-0 ">Shop Now</span> <FaArrowRightLong/>
+            </button>
+          </div>
+
+
+          <div>
+            <img src={slider1} alt=""/>
           </div>
         </SwiperSlide>
+
         <SwiperSlide className="d-flex gap-5 bg-black text-light">
-          <div className="d-flex gap-3">
-            <FaApple style={{ fontSize: "20px" }} />
-            <p>iPhone 14 Series</p>
-          </div>
           <div>
-            <img src={slider1} alt="" srcset="" />
+            <div className="d-flex gap-3">
+              <FaApple style={{fontSize: "20px"}}/>
+              <p>iPhone 14 Series</p>
+
+            </div>
+            <button className="bg-transparent text-white border-0 "><span className="border-bottom border-0 ">Shop Now</span> <FaArrowRightLong/>
+            </button>
+          </div>
+
+
+          <div>
+            <img src={slider1} alt=""/>
           </div>
         </SwiperSlide>
+
         <SwiperSlide className="d-flex gap-5 bg-black text-light">
-          <div className="d-flex gap-3">
-            <FaApple style={{ fontSize: "20px" }} />
-            <p>iPhone 14 Series</p>
-          </div>
           <div>
-            <img src={slider1} alt="" srcset="" />
+            <div className="d-flex gap-3">
+              <FaApple style={{fontSize: "20px"}}/>
+              <p>iPhone 14 Series</p>
+
+            </div>
+            <button className="bg-transparent text-white border-0 "><span className="border-bottom border-0 ">Shop Now</span> <FaArrowRightLong/>
+            </button>
+          </div>
+
+
+          <div>
+            <img src={slider1} alt=""/>
           </div>
         </SwiperSlide>
+
+        <SwiperSlide className="d-flex gap-5 bg-black text-light">
+          <div>
+            <div className="d-flex gap-3">
+              <FaApple style={{fontSize: "20px"}}/>
+              <p>iPhone 14 Series</p>
+
+            </div>
+            <button className="bg-transparent text-white border-0 "><span className="border-bottom border-0 ">Shop Now</span> <FaArrowRightLong/>
+            </button>
+          </div>
+
+
+          <div>
+            <img src={slider1} alt=""/>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className="d-flex gap-5 bg-black text-light">
+          <div>
+            <div className="d-flex gap-3">
+              <FaApple style={{fontSize: "20px"}}/>
+              <p>iPhone 14 Series</p>
+
+            </div>
+            <button className="bg-transparent text-white border-0 "><span className="border-bottom border-0 ">Shop Now</span> <FaArrowRightLong/>
+            </button>
+          </div>
+
+
+          <div>
+            <img src={slider1} alt=""/>
+          </div>
+        </SwiperSlide>
+
 
        
       </Swiper>

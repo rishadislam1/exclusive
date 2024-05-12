@@ -27,7 +27,7 @@ const NewArraival = () => {
                     <div className="col-sm">
                         <div className="rounded bg-black text-white womensCollection">
                             <div className="position-relative">
-                                <img src={womensProduct} className="w-100 imgWomens"/>
+                                <img src={womensProduct} className="w-100 imgWomens rounded"/>
                                 <div className="position-absolute bottom-0 ms-3 mb-4">
                                     <h3>Women’s Collections</h3>
                                     <p>Featured woman collections that <br/> give you another vibe.</p>

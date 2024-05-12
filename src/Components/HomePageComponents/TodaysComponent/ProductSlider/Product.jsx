@@ -6,26 +6,26 @@ export default function Product({ product }) {
   const { img, title, price, discount, strikePrice, likes } = product;
   return (
     <div>
-      <div className="card border-0" style={{ width: " 18rem" }}>
+      <div className="card border-0" style={{width: " 18rem"}}>
         <div className="position-relative bg-light">
           <img
-            className="card-img-top"
-            src={img}
-            alt="Card image cap"
-            height={"300px"}
+              className="card-img-top"
+              src={img}
+              alt="Card image cap"
+              height={"300px"}
           />
           <p
-            className="text-light bg-danger w-25 text-center position-absolute rounded"
-            style={{ top: "20px", left: "5px" }}
+              className="text-light bg-danger w-25 text-center position-absolute rounded"
+              style={{top: "20px", left: "5px"}}
           >
             -{discount}
           </p>
           <div
-            className="position-absolute"
-            style={{ top: "20px", right: "10px", fontSize: "25px" }}
+              className="position-absolute"
+              style={{top: "20px", right: "10px", fontSize: "25px"}}
           >
-            <MdFavoriteBorder className="bg-white p-1 rounded-circle" /> <br />{" "}
-            <FaRegEye className="bg-white p-1 rounded-circle" />
+            <MdFavoriteBorder className="bg-white p-1 rounded-circle"/> <br/>{" "}
+            <FaRegEye className="bg-white p-1 rounded-circle"/>
           </div>
         </div>
         <div className="card-body">
@@ -35,19 +35,20 @@ export default function Product({ product }) {
             <s>{strikePrice}</s>
           </div>
           <div>
-            <span style={{ color: "gold" }}>
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
+            <span style={{color: "gold"}}>
+              <FaStar/>
+              <FaStar/>
+              <FaStar/>
+              <FaStar/>
+              <FaStar/>
             </span>{" "}
             ({likes})
           </div>
         </div>
 
-
+        <button className="btn addToCartBtn ">Add To Cart</button>
       </div>
+
     </div>
   );
 }

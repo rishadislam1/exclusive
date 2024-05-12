@@ -28,3 +28,11 @@
     text-decoration: none;
     margin-left: 40px;
 }
+
+.zIndex{
+    z-index: 50;
+}
+
+.navClass{
+    transition: all 1s;
+}

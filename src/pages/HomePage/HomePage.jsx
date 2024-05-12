@@ -10,7 +10,7 @@ import FreeAndFastDelivery from "../../Components/HomePageComponents/FreeAndFast
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="position-relative">
         <Header/>
         <TodaysComponent/>
         <Categories/>
@@ -19,6 +19,7 @@ export default function HomePage() {
         <ExploreProducts/>
         <NewArraival/>
         <FreeAndFastDelivery/>
+        <button className="position-fixed end-0 btn btn-danger z-3">scroll to top</button>
     </div>
   )
 }

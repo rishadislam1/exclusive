@@ -1,0 +1,198 @@
+[
+    {
+      "id": 1,
+      "img": "./images/controller.png",
+      "title": "Product Name 1",
+      "price": "$49.99",
+      "discount": "40%",
+      "strikePrice": "$49.99",
+      "likes": 75
+    },
+    {
+      "id": 2,
+      "img": "./images/keyboard.png",
+      "title": "Product Name 2",
+      "price": "$59.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "5%",
+      "bonus": "$55.99",
+      "strikePrice": "$49.99",
+      "likes": 75
+    },
+    {
+      "id": 3,
+      "img": "./images/fire.png",
+      "title": "Product Name 3",
+      "price": "$39.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "10%",
+      "bonus": "$49.99",
+      "strikePrice": "$49.99",
+      "likes": 75
+    },
+    {
+      "id": 4,
+      "img": "./images/chair.png",
+      "title": "Product Name 4",
+      "price": "$79.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "20%",
+      "strikePrice": "$49.99",
+      "likes": 75
+    },
+    {
+      "id": 5,
+      "img": "./images/controller.png",
+      "title": "Product Name 5",
+      "price": "$99.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "15%",
+      "strikePrice": "$89.99",
+      "likes": 120
+    },
+    {
+      "id": 6,
+      "img": "./images/laptop.png",
+      "title": "Product Name 6",
+      "price": "$899.99",
+      "discount": "25%",
+      "strikePrice": "$1199.99",
+      "likes": 50
+    },
+    {
+      "id": 7,
+      "img": "./images/controller.png",
+      "title": "Product Name 7",
+      "price": "$29.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "10%",
+      "bonus": "$34.99",
+      "strikePrice": "$39.99",
+      "likes": 90
+    },
+    {
+      "id": 8,
+      "img": "./images/laptop.png",
+      "title": "Product Name 8",
+      "price": "$599.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "8%",
+      "bonus": "$549.99",
+      "strikePrice": "$649.99",
+      "likes": 85
+    },
+    {
+      "id": 9,
+      "img": "./images/chair.png",
+      "title": "Product Name 9",
+      "price": "$349.99",
+      "discount": "12%",
+      "strikePrice": "$399.99",
+      "likes": 60
+    },
+    {
+      "id": 10,
+      "img": "./images/controller.png",
+      "title": "Product Name 10",
+      "price": "$149.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "20%",
+      "strikePrice": "$189.99",
+      "likes": 110
+    },
+    {
+      "id": 11,
+      "img": "./images/chair.png",
+      "title": "Product Name 11",
+      "price": "$449.99",
+      "discount": "15%",
+      "strikePrice": "$529.99",
+      "likes": 70
+    },
+    {
+      "id": 12,
+      "img": "./images/laptop.png",
+      "title": "Product Name 12",
+      "price": "$79.99",
+      "discount": "10%",
+      "strikePrice": "$89.99",
+      "likes": 65
+    },
+    {
+      "id": 13,
+      "img": "./images/controller.png",
+      "title": "Product Name 13",
+      "price": "$129.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "5%",
+      "strikePrice": "$139.99",
+      "likes": 80
+    },
+    {
+      "id": 14,
+      "img": "./images/chair.png",
+      "title": "Product Name 14",
+      "price": "$39.99",
+      "discount": "10%",
+      "strikePrice": "$44.99",
+      "likes": 55
+    },
+    {
+      "id": 15,
+      "img": "./images/laptop.png",
+      "title": "Product Name 15",
+      "price": "$199.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "20%",
+      "strikePrice": "$249.99",
+      "likes": 100
+    },
+    {
+      "id": 16,
+      "img": "./images/chair.png",
+      "title": "Product Name 16",
+      "price": "$199.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "10%",
+      "strikePrice": "$219.99",
+      "likes": 75
+    },
+    {
+      "id": 17,
+      "img": "./images/controller.png",
+      "title": "Product Name 17",
+      "price": "$299.99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "discount": "15%",
+      "strikePrice": "$349.99",
+      "likes": 85
+    },
+    {
+      "id": 18,
+      "img": "./images/chair.png",
+      "title": "Product Name 18",
+      "price": "$79.99",
+      "discount": "20%",
+      "strikePrice": "$99.99",
+      "likes": 45
+    },
+    {
+      "id": 19,
+      "img": "./images/laptop.png",
+      "title": "Product Name 19",
+      "price": "$129.99",
+      "discount": "10%",
+      "strikePrice": "$139.99",
+      "likes": 60
+    },
+    {
+      "id": 20,
+      "img": "./images/controller.png",
+      "title": "Product Name 20",
+      "price": "$89.99",
+      "discount": "5%",
+      "strikePrice": "$94.99",
+      "likes": 70
+    }
+  ]
+

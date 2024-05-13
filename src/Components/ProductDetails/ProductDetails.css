@@ -1,0 +1,29 @@
+.btn1{
+    border: 1px solid black!important;
+}
+
+.count{
+    border: 1px solid black!important;
+    height: 30px;
+    text-align: center;
+}
+
+.deliver{
+    font-size: 40px;
+}
+
+.deliverBorder{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.mainImage{
+    height: 430px;
+}
+
+.btn1:hover{
+    background-color: red;
+    border: none;
+    color: white;
+}

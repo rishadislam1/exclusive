@@ -54,7 +54,7 @@ export default function NavbarMain() {
                             : ""
                 menu `}>
                     {" "}
-                    <Nav.Link className={`${scrolling&&"text-white"}`}>Home</Nav.Link>
+                    <menu className={`${scrolling&&"text-white"}`}>Home</menu>
                   </NavLink>
 
                   <NavLink className={`({ isActive, isPending }) =>
@@ -65,7 +65,7 @@ export default function NavbarMain() {
                             : ""
                 menu`} to="/contact" >
                     {" "}
-                    <Nav.Link className={`${scrolling&&"text-white"}`}>Contact</Nav.Link>
+                    <menu className={`${scrolling&&"text-white"}`}>Contact</menu>
                   </NavLink>
                   <NavLink to="/about" className={`({ isActive, isPending }) =>
                     isActive
@@ -75,7 +75,7 @@ export default function NavbarMain() {
                             : ""
                 menu`}>
                     {" "}
-                    <Nav.Link className={`${scrolling&&"text-white"}`}>About</Nav.Link>
+                    <menu className={`${scrolling&&"text-white"}`}>About</menu>
                   </NavLink>
                   <NavLink to="/signup" className={`({ isActive, isPending }) =>
                     isActive
@@ -85,7 +85,7 @@ export default function NavbarMain() {
                             : ""
                 menu`}>
                     {" "}
-                    <Nav.Link className={`${scrolling&&"text-white"}`}>SignUp</Nav.Link>
+                    <menu className={`${scrolling&&"text-white"}`}>SignUp</menu>
                   </NavLink>
                 </Nav>
               </div>

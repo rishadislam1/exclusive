@@ -11,3 +11,7 @@
   .addToCartBtn:hover{
     border: 1px solid black;
   }
+
+  .linkto{
+    text-decoration: none;
+  }

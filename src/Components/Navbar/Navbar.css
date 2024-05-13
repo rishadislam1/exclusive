@@ -36,3 +36,7 @@
 .navClass{
     transition: all 1s;
 }
+
+menu{
+    color: darkgray;
+}

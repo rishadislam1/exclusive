@@ -7,8 +7,22 @@ import Music from "../../Components/HomePageComponents/Music/Music.jsx";
 import ExploreProducts from "../../Components/HomePageComponents/ExploreProduct/ExploreProducts.jsx";
 import NewArraival from "../../Components/HomePageComponents/NewArrival/NewArraival.jsx";
 import FreeAndFastDelivery from "../../Components/HomePageComponents/FreeAndFastDelivery/FreeAndFastDelivery.jsx";
+import {ProductApi} from "../../ApiRequest/ProductApi.jsx";
+import {useEffect} from "react";
 
 export default function HomePage() {
+
+    useEffect(() => {
+        // Call the ProductApi function when the component mounts
+        (async () => {
+            await ProductApi()
+        })()
+
+    }, []);
+
+
+
+
   return (
     <div className="position-relative">
         <Header/>
@@ -19,7 +33,7 @@ export default function HomePage() {
         <ExploreProducts/>
         <NewArraival/>
         <FreeAndFastDelivery/>
-        <button className="position-fixed end-0 btn btn-danger z-3">scroll to top</button>
+
     </div>
   )
 }

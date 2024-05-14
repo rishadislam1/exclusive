@@ -1,10 +1,12 @@
 import {useGetProductsQuery} from "../../../redux/features/Products/ProductApi.js";
 import Product from "../TodaysComponent/ProductSlider/Product.jsx";
 import React from "react";
+import {useSelector} from "react-redux";
 
 
 const BestSellong = () => {
-    const {data} = useGetProductsQuery();
+
+    const data = useSelector(state=>state.products.products);
 
     return (
         <div className="mt-5">
@@ -25,7 +27,7 @@ const BestSellong = () => {
             <div>
                 <div
                     className='product-container d-flex justify-content-between align-items-center mt-5 gap-3 overflow-hidden'>
-                    {data?.products?.slice(0, 4).map((product) => <Product key={product.map} product={product}/>)}
+                    {data?.slice(0, 4).map((product) => <Product key={product.map} product={product}/>)}
 
 
                 </div>

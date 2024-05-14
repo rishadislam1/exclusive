@@ -1,20 +1,25 @@
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {FaStar} from "react-icons/fa";
-import React from "react";
+import React, {useEffect} from "react";
 import ProductDetails from "../../Components/ProductDetails/ProductDetails.jsx";
+import "./ProductDetailsPage.css"
 
 const ProductDetailsPage = () => {
     const { productId } = useParams();
+    const {state} = useLocation();
 
-    const products = useSelector(state=>state.products.products);
-    const singleProduct = products.find(product =>product.id === Number(productId));
-    const { id, img, title, prevPrice, newPrice, color, reviews, company, category } = singleProduct;
-
+    const {title, category } = state.product;
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+    }, []);
     return (
-        <div>
-            <h3>Account/{category}/{title}</h3>
-           <ProductDetails productId={productId}/>
+        <div >
+            <h4 className="mb-5">Account/{category}/{title}</h4>
+          <div>
+              <ProductDetails/>
+          </div>
         </div>
     );
 };

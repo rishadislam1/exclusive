@@ -18,12 +18,19 @@
     padding: 20px;
 }
 
-.mainImage{
-    height: 430px;
-}
+/*.mainImage{*/
+/*    height: 430px;*/
+/*}*/
 
 .btn1:hover{
     background-color: red;
     border: none;
     color: white;
+}
+
+.blue:checked{
+    background-color: blue;
+}
+.red:checked{
+    background-color: red;
 }

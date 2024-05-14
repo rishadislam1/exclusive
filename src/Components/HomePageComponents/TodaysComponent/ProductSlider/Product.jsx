@@ -8,7 +8,7 @@ import "./ProductSlider.css"
 export default function Product({ product }) {
   const { id, img, title, prevPrice, newPrice, color, reviews, company, category } = product;
   return (
-      <Link className="linkto" to={`/productdetails/${id}`}>
+      <Link className="linkto" to={`/productdetails/${id}`} state={{product: product}}>
         <div style={{cursor: "pointer"}}>
           <div className="card border-0" style={{width: " 18rem", height: "500px"}}>
             <div className="position-relative bg-light">

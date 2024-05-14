@@ -1,23 +1,26 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {FaStar} from "react-icons/fa";
-import {useSelector} from "react-redux";
 import "./ProductDetails.css"
 import {GrFavorite} from "react-icons/gr";
 import {TbTruckDelivery} from "react-icons/tb";
 import {IoReturnDownForward} from "react-icons/io5";
 import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 import Product from "../HomePageComponents/TodaysComponent/ProductSlider/Product.jsx";
+import {useLocation} from "react-router-dom";
+import {MdFavorite} from "react-icons/md";
 
-const ProductDetails = ({productId}) => {
+const ProductDetails = () => {
+    const {state} = useLocation();
 
-    const products = useSelector(state=>state.products.products);
-    const singleProduct = products.find(product =>product.id === Number(productId));
+    const products = JSON.parse(localStorage.getItem("products"))
 
-    const { id, img, title, prevPrice, newPrice, color, reviews, company, category } = singleProduct;
-    const productCategory = products.filter(product =>product.category === category);
-    console.log(productCategory)
+    const { category, img, title, newPrice, reviews} = state.product;
+    const productCategory = products?.products?.filter(product =>product.category === category);
+
     const [count,setCount] = useState(0);
     const [disable,setDisable] = useState(false);
+    const [sizeSelect, setSizeSelect] = useState('xs');
+    const [favourite, setFavourite] = useState(false);
 
     const handlePlus=()=>{
         setCount(count+1);
@@ -29,24 +32,30 @@ const ProductDetails = ({productId}) => {
         }
         setCount(count-1);
     }
+
+    const handleFormSubmit = (e)=>{
+        e.preventDefault();
+    }
+
+
     return (
-        <div>
-            <div className="d-md-flex align-items-center justify-content-center gap-5 ">
-                <div className="">
-                    <div className="d-md-flex justify-content-center align-items-center gap-4">
+        <div >
+            <div className="d-lg-flex  gap-5 productDetails w-100">
+
+                    <div className="d-flex flex-md-row flex-column justify-content-center align-items-center gap-4">
                         <div>
-                            <div><img src={img} style={{height: "100px"}}/></div>
-                            <div><img src={img} style={{height: "100px", marginTop: "10px"}}/></div>
-                            <div><img src={img} style={{height: "100px", marginTop: "10px"}}/></div>
-                            <div><img src={img} style={{height: "100px", marginTop: "10px"}}/></div>
+                            <div><img src={img} style={{height: "138px"}}/></div>
+                            <div><img src={img} style={{height: "138px", marginTop: "10px"}}/></div>
+                            <div><img src={img} style={{height: "138px", marginTop: "10px"}}/></div>
+                            <div><img src={img} style={{height: "138px", marginTop: "10px"}}/></div>
                         </div>
                         <div>
-                            <div><img src={img} className="mainImage w-100"/></div>
+                            <div className="bg-white p-5"><img src={img} className="mainImage w-100"/></div>
                         </div>
                     </div>
-                </div>
-                <div >
-                    <h2>{title}</h2>
+
+                <div className="mt-5 mt-lg-0">
+                    <h4>{title}</h4>
                     <div>
                         <span style={{color: "gold"}}>
                           <FaStar/>
@@ -57,33 +66,51 @@ const ProductDetails = ({productId}) => {
                         </span>{" "}
                         {reviews} | <span className="text-success">In Stock</span>
                     </div>
-                    <h4 className="mt-3">${newPrice}</h4>
+                    <h4 className="mt-2">${newPrice}</h4>
                     <p>{title}</p>
                     <hr/>
-                    <div>
-                        Colors: {color}
-                    </div>
-                    <div className="d-flex gap-2 align-items-center mt-3">
-                        Size: <button className="btn1 btn btn-ghost border-1  rounded">XS</button>
-                        <button className="btn1 rounded btn btn-danger">S</button>
-                        <button className="btn1 btn btn-ghost border-1  rounded">M</button>
-                        <button className="btn1 btn btn-ghost border-1  rounded">L</button>
-                        <button className="btn1 btn btn-ghost border-1  rounded">XL</button>
-                    </div>
-                    <div className="mt-5 d-flex align-items-center gap-3">
-                        <div className="d-flex btn-group ">
-                            <button className="btn btn-ghost btn1" onClick={handleMinus} disabled={disable}>-</button>
-                            <button className=" btn btn-ghost btn1  px-4">{count}</button>
-                            <button className="btn btn-ghost btn1" onClick={handlePlus}>+</button>
+                    <form onSubmit={handleFormSubmit}>
+                        <div className="d-flex gap-3">
+                            Colors:
+                            <div className="form-check">
+                                <input className="form-check-input red" type="radio" name="flexRadioDefault" value="red"
+                                       id="redColor"/>
+                                <label className="form-check-label" htmlFor="redColor">
+                                   Red
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input blue" type="radio" name="flexRadioDefault" value="blue"
+                                       id="blueColor" checked/>
+                                <label className="form-check-label" htmlFor="blueColor">
+                                    Blue
+                                </label>
+                            </div>
                         </div>
-                        <button className="btn btn-danger">Buy Now</button>
-                        <button className="btn1 btn btn-ghost"><GrFavorite />
-                        </button>
-                    </div>
+                        <div className="d-flex gap-2 align-items-center mt-3">
+                            Size: <button className={`btn1 btn  border-1  rounded ${sizeSelect==='xs'?"btn-danger":"btn-ghost"}`} onClick={()=>setSizeSelect('xs')}>XS</button>
+                            <button className={`btn1 btn  border-1  rounded ${sizeSelect==='s'?"btn-danger":"btn-ghost"}`} onClick={()=>setSizeSelect('s')}>S</button>
+                            <button className={`btn1 btn  border-1  rounded ${sizeSelect==='m'?"btn-danger":"btn-ghost"}`} onClick={()=>setSizeSelect('m')}>M</button>
+                            <button className={`btn1 btn  border-1  rounded ${sizeSelect==='l'?"btn-danger":"btn-ghost"}`} onClick={()=>setSizeSelect('l')}>L</button>
+                            <button className={`btn1 btn  border-1  rounded ${sizeSelect==='xl'?"btn-danger":"btn-ghost"}`} onClick={()=>setSizeSelect('xl')}>XL</button>
+                        </div>
+                        <div className="mt-3 d-flex align-items-center gap-3">
+                            <div className="d-flex btn-group ">
+                                <button className="btn btn-ghost btn1" onClick={handleMinus} disabled={disable}>-
+                                </button>
+                                <button className=" btn btn-ghost btn1  px-4">{count}</button>
+                                <button className="btn btn-ghost btn1" onClick={handlePlus}>+</button>
+                            </div>
+                            <button className="btn btn-danger">Buy&nbsp;Now</button>
+                            <button className={`btn1 btn btn-ghost`} onClick={()=>setFavourite(!favourite)}><MdFavorite
+                                className={`${favourite?"text-warning":"text-black border-2"}`}/>
+                            </button>
+                        </div>
+                    </form>
                     <div className="border-2 rounded mt-5">
                         <div className="deliverBorder">
                             <div className="d-flex align-items-center gap-3">
-                                <TbTruckDelivery className="deliver" />
+                                <TbTruckDelivery className="deliver"/>
 
                                 <div>
                                     <h5>Free Delivery</h5>
@@ -105,11 +132,11 @@ const ProductDetails = ({productId}) => {
 
             </div>
             <div className="mt-5">
-                <SectionHeader categories="Related Items" />
+                <SectionHeader categories="Related Items"/>
             </div>
 
             <div className="d-md-flex flex-wrap align-items-center gap-5 ">
-                {productCategory?.map((product)=><Product key={product.map} product={product}/>)}
+                {productCategory?.map((product) => <Product key={product.map} product={product}/>)}
             </div>
         </div>
     );

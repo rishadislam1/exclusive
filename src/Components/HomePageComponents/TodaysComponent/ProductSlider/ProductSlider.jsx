@@ -3,10 +3,12 @@ import { useGetProductsQuery } from '../../../../redux/features/Products/Product
 import Product from './Product';
 import {FaArrowLeftLong, FaArrowRightLong} from "react-icons/fa6";
 import "./ProductSlider.css";
+import {useSelector} from "react-redux";
 
 
 export default function ProductSlider() {
-    const {data} = useGetProductsQuery();
+    const data = useSelector(state=>state.products.products);
+
     let box = document.querySelector('.product-container');
 
     const btnpressprev = () => {
@@ -30,7 +32,7 @@ export default function ProductSlider() {
 
        </div>
        <div className='product-container d-flex justify-content-between align-items-center mt-5 gap-3 overflow-hidden'>
-        {data?.products?.map((product)=><Product key={product.map} product={product}/>)}
+        {data?.map((product)=><Product key={product.map} product={product}/>)}
         
     </div>
    <div className='d-flex justify-content-center align-items-center mt-5'> <button className='btn btn-danger'>View All Products </button></div>

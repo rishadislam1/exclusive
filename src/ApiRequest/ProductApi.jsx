@@ -9,7 +9,8 @@ export async function ProductApi(){
         let url = 'data.json';
         const data = await axios.get(url,  { withCredentials: true })
         store.dispatch(setProducts(data?.data?.products));
-        return data;
+        const productsData = data?.data;
+        localStorage.setItem("products", JSON.stringify(productsData));
 
     } catch (e) {
         console.log(e)

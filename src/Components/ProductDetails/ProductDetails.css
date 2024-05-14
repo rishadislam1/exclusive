@@ -18,9 +18,9 @@
     padding: 20px;
 }
 
-/*.mainImage{*/
-/*    height: 430px;*/
-/*}*/
+.mainImage{
+    height: 490px;
+}
 
 .btn1:hover{
     background-color: red;
@@ -30,7 +30,28 @@
 
 .blue:checked{
     background-color: blue;
+    border:  2px solid black;
+}
+.blue{
+    background-color: blue;
 }
 .red:checked{
     background-color: red;
+    border: 2px solid black;
+
+}
+.red{
+    background-color: red;
+
+}
+
+.mainImageDiv{
+    width: 700px;
+}
+
+
+@media (max-width: 768px) {
+    .mainImageDiv{
+        width: 300px;
+    }
 }

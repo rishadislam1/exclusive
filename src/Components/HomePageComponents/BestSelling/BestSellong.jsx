@@ -6,7 +6,7 @@ import {useSelector} from "react-redux";
 
 const BestSellong = () => {
 
-    const data = useSelector(state=>state.products.products);
+    const data = useSelector(state=>state.poroductList.products);
 
     return (
         <div className="mt-5">

@@ -6,7 +6,7 @@ import {useSelector} from "react-redux";
 
 const ExploreProducts = () => {
 
-    const data = useSelector(state=>state.products.products);
+    const data = useSelector(state=>state.poroductList.products);
     return (
         <div className="mt-5">
             <SectionHeader categories="Our Products" header="Explore Our Products"/>

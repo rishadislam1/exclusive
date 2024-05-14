@@ -7,7 +7,7 @@ import {useSelector} from "react-redux";
 
 
 export default function ProductSlider() {
-    const data = useSelector(state=>state.products.products);
+    const data = useSelector(state=>state.poroductList.products);
 
     let box = document.querySelector('.product-container');
 

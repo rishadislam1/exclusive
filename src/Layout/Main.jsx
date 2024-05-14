@@ -6,7 +6,7 @@ import '../index.css'
 
 export default function () {
   return (
-    <div className="position-relative">
+    <div className="position-relative bg-white">
       <NavbarMain />
       <div className="container mx-auto">
         <Outlet />

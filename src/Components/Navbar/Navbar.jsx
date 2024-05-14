@@ -63,9 +63,9 @@ export default function NavbarMain() {
                         : isPending
                             ? "pending"
                             : ""
-                menu`} to="/contact" >
+                menu  text-center`} to="/contact" >
                     {" "}
-                    <menu className={`${scrolling&&"text-white"}`}>Contact</menu>
+                    <menu className={`${scrolling&&"text-white"} text-center`}>Contact</menu>
                   </NavLink>
                   <NavLink to="/about" className={`({ isActive, isPending }) =>
                     isActive

@@ -21,11 +21,17 @@
 
 .active{
     border-bottom: 1px solid gray;
+    text-align: center;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border-radius: 3px;*/
 }
 
 .menu{
     text-decoration: none;
+    text-align: center;
     margin-left: 40px;
 }
 
@@ -39,4 +45,6 @@
 
 menu{
     color: darkgray;
+    text-align: center;
 }
+

@@ -6,12 +6,30 @@
     .formSearch {
         width: 250px; /* Adjust width for tablet devices */
     }
+    menu{
+        margin-left: 0px;
+    }
+    .active{
+        border-bottom: 0px solid gray;
+
+        text-decoration: none;
+        /*border-radius: 3px;*/
+    }
 }
 
 /* Media query for mobile devices (up to 576px width) */
 @media (max-width: 576px) {
     .formSearch {
         width: 200px; /* Adjust width for mobile devices */
+    }
+    menu{
+        margin-left: 0px;
+    }
+    .active{
+        border-bottom: 0px solid gray;
+
+        text-decoration: none;
+        /*border-radius: 3px;*/
     }
 }
 
@@ -21,11 +39,8 @@
 
 .active{
     border-bottom: 1px solid gray;
-    text-align: center;
+
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     /*border-radius: 3px;*/
 }
 
@@ -46,5 +61,15 @@
 menu{
     color: darkgray;
     text-align: center;
+    margin-left: -40px;
 }
 
+.transitionOnProfileHidden {
+    transition: transform 1s ease;
+    transform: translateY(-200%);
+}
+
+.transitionOnProfile {
+    transition: transform 1s ease;
+    transform: translateY(0%);
+}

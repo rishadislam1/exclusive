@@ -99,8 +99,8 @@ export default function Footer() {
                 <h6 className="text-uppercase fw-bold mb-4">Download Apps</h6>
                 <small>Save $3 with App New User Only</small>
                 <div className="text-uppercase fw-bold mb-4 d-flex gap-3 mt-3">
-                    <div><img src={qrcode} alt="" srcset="" /></div>
-                    <div><img src={apps} alt="" srcset="" /></div>
+                    <div><img src={qrcode} alt=""  /></div>
+                    <div><img src={apps} alt="" /></div>
                 </div>
                 <div className="text-uppercase fw-bold mb-4 d-flex justify-content-between gap-3 mt-3" style={{fontSize: "20px"}}>
                     <FaFacebook/> <FaTwitter/> <FaInstagram/> <FaLinkedin/> <CiYoutube/>

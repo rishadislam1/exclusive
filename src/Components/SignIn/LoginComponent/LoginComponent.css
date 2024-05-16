@@ -1,0 +1,13 @@
+.nameInput{
+    border: none;
+    border-bottom: 1px solid black;
+}
+.form-control{
+    border-radius: 0px;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid black!important;
+    border-radius: 0px;
+}

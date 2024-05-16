@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {FaStar} from "react-icons/fa";
+import {FaArrowDown, FaArrowUp, FaStar} from "react-icons/fa";
 import "./ProductDetails.css"
 import {TbTruckDelivery} from "react-icons/tb";
 import {IoReturnDownForward} from "react-icons/io5";
@@ -39,21 +39,41 @@ const ProductDetails = () => {
     const handleFormSubmit = (e)=>{
         e.preventDefault();
     }
+    let box = document.querySelector('.product-container');
+    const btnpressprev = () => {
 
-console.log(selectImage===prevImage)
+        let height = box?.clientHeight;
+        box.scrollTop = box?.scrollTop - height;
+    }
+
+    const btnpressnext = () => {
+
+        let height = box?.clientHeight;
+        box.scrollTop = box?.scrollTop + height;
+
+    }
+
     return (
         <div >
             <div className="d-lg-flex  gap-5 productDetails w-100">
+                <div className={`${images.length > 4 ? "d-block":"d-none"} `}>
+                    <button className="btn btn-danger" onClick={btnpressprev}><FaArrowUp />
+                    </button>
+                    <button className="btn btn-danger mt-lg-3 ms-2 ms-lg-0"  onClick={btnpressnext}><FaArrowDown />
+                    </button>
+                </div>
+                <div className="d-flex flex-md-row flex-column-reverse justify-content-center align-items-center gap-4 ">
+                    <div className="d-flex flex-md-column gap-2 overflow-hidden product-container" style={{height: "580px"}}>
+                        {images?.map((image, index) => <div key={index} onClick={() => setSelectImage(images[index])}>
+                            <img src={image} style={{height: "138px", width: "200px", cursor: "pointer", border: "3px solid #F5F5F5"}}/></div>)}
+                    </div>
 
-                    <div className="d-flex flex-md-row flex-column justify-content-center align-items-center gap-4">
-                        <div className="d-flex flex-column gap-2">
-                            {images?.map((image,index) => <div key={index} onClick={()=>setSelectImage(images[index])}><img src={image} style={{height: "138px", width: "200px", cursor: "pointer"}}/></div>)}
-                        </div>
-
-                        <div>
-                            <div className="bg-white p-5 mainImageDiv"><img src={selectImage!==prevImage?selectImage:images[0]} className="mainImage w-100"/></div>
+                    <div>
+                        <div className="bg-white p-5 mainImageDiv rounded" style={{border: "3px solid #F5F5F5"}}><img
+                            src={selectImage !== prevImage ? selectImage : images[0]} className="mainImage w-100"/>
                         </div>
                     </div>
+                </div>
 
                 <div className="mt-5 mt-lg-0">
                     <h4>{title}</h4>
@@ -79,17 +99,32 @@ console.log(selectImage===prevImage)
 
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input blue" type="radio" name="flexRadioDefault" value="blue"
+                                <input className="form-check-input blue" type="radio" name="flexRadioDefault"
+                                       value="blue"
                                        id="blueColor"/>
 
                             </div>
                         </div>
                         <div className="d-flex gap-2 align-items-center mt-3">
-                            Size: <button className={` btn  rounded ${sizeSelect==='xs'?"btn-danger border-danger":"btn-ghost border-success"}`} onClick={()=>setSizeSelect('xs')}>XS</button>
-                            <button className={` btn   rounded ${sizeSelect==='s'?"btn-danger border-danger":"btn-ghost border-success"}`} onClick={()=>setSizeSelect('s')}>S</button>
-                            <button className={` btn  rounded ${sizeSelect==='m'?"btn-danger border-danger":"btn-ghost border-success"}`} onClick={()=>setSizeSelect('m')}>M</button>
-                            <button className={` btn    rounded ${sizeSelect==='l'?"btn-danger border-danger":"btn-ghost border-success"}`} onClick={()=>setSizeSelect('l')}>L</button>
-                            <button className={` btn  rounded ${sizeSelect==='xl'?"btn-danger border-danger":"btn-ghost border-success"}`} onClick={()=>setSizeSelect('xl')}>XL</button>
+                            Size: <button
+                            className={` btn  rounded ${sizeSelect === 'xs' ? "btn-danger border-danger" : "btn-ghost border-success"}`}
+                            onClick={() => setSizeSelect('xs')}>XS</button>
+                            <button
+                                className={` btn   rounded ${sizeSelect === 's' ? "btn-danger border-danger" : "btn-ghost border-success"}`}
+                                onClick={() => setSizeSelect('s')}>S
+                            </button>
+                            <button
+                                className={` btn  rounded ${sizeSelect === 'm' ? "btn-danger border-danger" : "btn-ghost border-success"}`}
+                                onClick={() => setSizeSelect('m')}>M
+                            </button>
+                            <button
+                                className={` btn    rounded ${sizeSelect === 'l' ? "btn-danger border-danger" : "btn-ghost border-success"}`}
+                                onClick={() => setSizeSelect('l')}>L
+                            </button>
+                            <button
+                                className={` btn  rounded ${sizeSelect === 'xl' ? "btn-danger border-danger" : "btn-ghost border-success"}`}
+                                onClick={() => setSizeSelect('xl')}>XL
+                            </button>
                         </div>
                         <div className="mt-3 d-flex align-items-center gap-3">
                             <div className="d-flex btn-group ">
@@ -99,8 +134,10 @@ console.log(selectImage===prevImage)
                                 <button className="btn btn-ghost btn1" onClick={handlePlus}>+</button>
                             </div>
                             <button className="btn btn-danger">Buy&nbsp;Now</button>
-                            <button className={` btn btn-ghost ${favourite?"text-warning bg-danger border-danger":"text-black btn1"} `} onClick={()=>setFavourite(!favourite)}><MdFavorite
-                                className={`${favourite?"text-warning ":"text-black border-2"}`}/>
+                            <button
+                                className={` btn btn-ghost ${favourite ? "text-warning bg-danger border-danger" : "text-black btn1"} `}
+                                onClick={() => setFavourite(!favourite)}><MdFavorite
+                                className={`${favourite ? "text-warning " : "text-black border-2"}`}/>
                             </button>
                         </div>
                     </form>
@@ -129,7 +166,7 @@ console.log(selectImage===prevImage)
 
             </div>
             <div className="mt-5">
-                <SectionHeader categories="Related Items"/>
+            <SectionHeader categories="Related Items"/>
             </div>
 
             <div className="d-md-flex flex-wrap align-items-center gap-5 ">

@@ -1,5 +1,4 @@
-import React from 'react'
-import { useGetProductsQuery } from '../../../../redux/features/Products/ProductApi'
+
 import Product from './Product';
 import {FaArrowLeftLong, FaArrowRightLong} from "react-icons/fa6";
 import "./ProductSlider.css";

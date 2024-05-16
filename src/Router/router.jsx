@@ -1,32 +1,28 @@
-import {
-    createBrowserRouter,
 
-  } from "react-router-dom";
-import Main from "../Layout/Main";
-import HomePage from "../pages/HomePage/HomePage";
-import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage.jsx";
-import NotFound from "../pages/NotFound/NotFound.jsx";
 
-const router= createBrowserRouter([
+import {lazy} from "react";
+
+const router = [
     {
-        path: '/',
-        element: <Main/>,
-        children: [
-            {
-                path:'/',
-                element: <HomePage/>
-            },
-            {
-                path: '/productdetails/:productId',
-                element: <ProductDetailsPage/>
-            },
-            {
-                path:'*',
-                element: <NotFound/>
-            }
-        ]
+        url: '/',
+        component: lazy(()=>import('../pages/HomePage/HomePage.jsx'))
     },
+    {
+        url: '/productdetails/:productId',
+        component: lazy(()=>import('../pages/ProductDetailsPage/ProductDetailsPage.jsx'))
+    },
+    {
+        url: '/signup',
+        component: lazy(()=>import('../pages/SignInPage/SignInPage.jsx'))
+    },
+    {
+        url: '/login',
+        component: lazy(()=>import('../pages/SignInPage/Login.jsx'))
+    },
+    {
+        url: '*',
+        component: lazy(()=>import('../pages/NotFound/NotFound.jsx'))
+    }
+]
 
-])
-
-export default router;
+export default  router;

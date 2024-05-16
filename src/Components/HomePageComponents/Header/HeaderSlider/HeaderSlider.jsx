@@ -18,7 +18,7 @@ import {FaArrowRightLong} from "react-icons/fa6";
 
 export default function HeaderSlider() {
   return (
-    <div className="headersliderdiv ">
+    <div className="headersliderdiv" style={{zIndex: "0"}}>
       <Swiper
         cssMode={true}
         navigation={true}
@@ -26,7 +26,7 @@ export default function HeaderSlider() {
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper"
+        className="mySwiper" style={{zIndex:"0"}}
       >
         <SwiperSlide className="d-flex gap-5 bg-black text-light">
           <div>

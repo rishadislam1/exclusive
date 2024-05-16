@@ -24,7 +24,7 @@ export default function HomePage() {
 
 
   return (
-    <div className="position-relative">
+    <div className="position-relative container mx-auto">
         <Header/>
         <TodaysComponent/>
         <Categories/>

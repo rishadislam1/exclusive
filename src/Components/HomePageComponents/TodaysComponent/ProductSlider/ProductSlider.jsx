@@ -6,8 +6,9 @@ import {useSelector} from "react-redux";
 
 
 export default function ProductSlider() {
-    const data = useSelector(state=>state.poroductList.products);
-
+    // const data = useSelector(state=>state.poroductList.products);
+    const data = useSelector(state=>state.flashSellSlider.flashSellList)
+  
     let box = document.querySelector('.product-container');
 
     const btnpressprev = () => {
@@ -30,8 +31,8 @@ export default function ProductSlider() {
            <button className="btn btn-primary" onClick={btnpressnext}><FaArrowRightLong/></button>
 
        </div>
-       <div className='product-container d-flex justify-content-between align-items-center mt-5 gap-3 overflow-hidden'>
-        {data?.map((product)=><Product key={product.map} product={product}/>)}
+       <div className='product-container d-flex justify-content-start align-items-center mt-5 gap-5 overflow-hidden'>
+        {data?.map((product,index)=><Product key={index} product={product}/>)}
         
     </div>
    <div className='d-flex justify-content-center align-items-center mt-5'> <button className='btn btn-danger'>View All Products </button></div>

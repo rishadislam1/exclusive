@@ -1,18 +1,33 @@
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 
 import ProductDetails from "../../Components/ProductDetails/ProductDetails.jsx";
 import "./ProductDetailsPage.css"
+import { useEffect } from "react";
+import { ProductsDetailsApi } from "../../ApiRequest/ProductsDetailsApi.jsx";
+import { useSelector } from "react-redux";
 
 const ProductDetailsPage = () => {
-    const {state} = useLocation();
+    const { productId } = useParams();
 
-    const {title, category } = state.product;
+  
+  useEffect(()=>{
+    // console.log('first')
+    (async () => {
+      await ProductsDetailsApi(Number(productId));
+    })();
+  },[])
+
+  const productDetailsWithApi = useSelector(state=>state.productsdetails.productsDetails)
+
+
+  const {Title,Tags} = productDetailsWithApi;
+
 
     window.scrollTo(0, 0);
 
     return (
         <div className="container mx-auto">
-            <h4 className="mb-5"><Link to={'/'} style={{color: "black"}}>Home</Link>/<Link to={'/category'}  style={{color: "black"}}>{category}</Link>/ {title}</h4>
+           <h4 className="mb-5"><Link to={'/'} style={{color: "black"}}>Home</Link>/<Link to={'/category'}  style={{color: "black"}}>{Tags}</Link>/ {Title}</h4> 
           <div>
               <ProductDetails/>
           </div>

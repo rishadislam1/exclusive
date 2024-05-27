@@ -11,6 +11,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
 import {FaRegStar, FaRegUser, FaShoppingBag} from "react-icons/fa";
 import {RxCrossCircled} from "react-icons/rx";
+import {useSelector} from "react-redux";
 
 export default function NavbarMain() {
     const navigate = useNavigate();
@@ -37,6 +38,12 @@ let email;
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+ // wishlist
+
+    const wishList =  useSelector(state=>state.wishListSlice.wishlist);
+    const cartList = useSelector(state=>state.wishListSlice.cartList);
+
 
  const handleLogout = ()=>{
      localStorage.removeItem("login");
@@ -125,19 +132,43 @@ let email;
                     }}
                 />
               </div>
-              <MdFavoriteBorder className={`${scrolling&&"text-white"}`}
-                  style={{ marginLeft: "10px", fontSize: "25px" }}
-              />
-              <IoCartOutline style={{ marginLeft: "10px", fontSize: "25px" }} className={`${scrolling&&"text-white"}`} />
+             <Link to={'/wishlist'} className="text-decoration-none position-relative"> <MdFavoriteBorder className={`${scrolling&&"text-white"}`}
+                                     style={{ marginLeft: "10px", fontSize: "25px" }}
+             /> {wishList.length > 0 && <div className="position-absolute" style={{
+                 top: "-12px",
+                 right: "-8px",
+                 fontSize: "15px",
+                 backgroundColor: "red",
+                 color: "white",
+                 width: "25px",
+                 height: "23px",
+                 textAlign: "center",
+                 borderRadius: "50%"
+             }}>{wishList.length}</div>}</Link>
 
-              {/*  profile */}
-              {
-                  email &&
-                  <div className="position-relative">
-                    <FaRegUser style={{marginLeft: "10px", fontSize: "30px", cursor: "pointer"}}
+                <Link to={'/cartlist'} className="text-decoration-none position-relative"> <IoCartOutline
+                    style={{marginLeft: "10px", fontSize: "25px"}} className={`${scrolling && "text-white"}`}/>
+                    {cartList?.length > 0 && <div className="position-absolute" style={{
+                        top: "-12px",
+                        right: "-8px",
+                        fontSize: "15px",
+                        backgroundColor: "blue",
+                        color: "white",
+                        width: "25px",
+                        height: "23px",
+                        textAlign: "center",
+                        borderRadius: "50%"
+                    }}>{cartList.length}</div>}</Link>
+
+
+                {/*  profile */}
+                {
+                    email &&
+                    <div className="position-relative">
+                        <FaRegUser style={{marginLeft: "10px", fontSize: "30px", cursor: "pointer"}}
                                className={`bg-danger  rounded-circle p-2 text-white`} onClick={()=>setShowDetails(!showDetails)}/>
 
-                    <div style={{zIndex: "100", top: "50px", backgroundColor: "rgba(0,0,0,0.3", color: "white", padding: "10px", borderRadius: "10px", width: "250px"}} className={` position-absolute ${showDetails?"transitionOnProfile":"transitionOnProfileHidden "}`}>
+                    <div style={{zIndex: "100", top: "50px",right:"0", color: "white", padding: "10px", borderRadius: "10px", width: "250px"}} className={`profileClass position-absolute ${showDetails?"transitionOnProfile":"transitionOnProfileHidden "}`}>
                         <div>
                             <p style={{cursor: "pointer"}}><CiUser className="me-2" style={{fontWeight: "bold", fontSize: "20px"}}/>
                                 Manage My Account</p>
@@ -146,11 +177,11 @@ let email;
                             <p style={{cursor: "pointer"}}><RxCrossCircled
                                 className="me-2" style={{fontWeight: "bold", fontSize: "20px"}}/>
                                My Collections</p>
-                            <p style={{cursor: "pointer"}}><CiLogout
+                            <p style={{cursor: "pointer"}}><CiUser
 
                                 className="me-2" style={{fontWeight: "bold", fontSize: "20px"}}/>
                                 My Reviews</p>
-                            <p onClick={handleLogout} style={{cursor: "pointer"}}><CiUser className="me-2" style={{fontWeight: "bold", fontSize: "20px"}}/>
+                            <p onClick={handleLogout} style={{cursor: "pointer"}}><CiLogout className="me-2" style={{fontWeight: "bold", fontSize: "20px"}}/>
                                 LogOut</p>
                         </div>
                     </div>

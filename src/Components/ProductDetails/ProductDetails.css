@@ -18,9 +18,7 @@
     padding: 20px;
 }
 
-.mainImage{
-    height: 490px;
-}
+
 
 .btn1:hover{
     background-color: red;
@@ -44,13 +42,57 @@
 
 }
 
-.mainImageDiv{
-    width: 700px;
+.mainImage{
+    height: 500px;
 }
 
+.mainImageDiv{
+    width: 700px;
+
+}
+.imageContainer{
+    height: 590px;
+}
+
+.star{
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.custom-offcanvas-width{
+    width: 800px!important;
+    border-radius: 10px!important;
+}
+.btn-slider{
+    transition: 1s all;
+}
+
+.btn-slider:hover{
+    background-color: black!important;
+}
+
+.product-container2{
+    scroll-behavior: smooth;
+}
 
 @media (max-width: 768px) {
     .mainImageDiv{
-        width: 300px;
+        width: 100%;
     }
+    .mainImage{
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+    .scrollImage{
+        height: 100px
+    }
+    .imageContainer{
+        height: 180px;
+    }
+    .custom-offcanvas-width{
+        width: 400px!important;
+        border-radius: 10px!important;
+    }
+
 }

@@ -7,7 +7,7 @@ export default function Main({children}) {
   return (
     <div className="position-relative bg-white">
       <NavbarMain />
-      <div className="z-0">
+      <div className="z-0" style={{minHeight: "100vh"}}>
 
           {children}
       </div>

@@ -12,7 +12,7 @@ const ExploreProducts = () => {
             <SectionHeader categories="Our Products" header="Explore Our Products"/>
             <div
                 className='product-container d-flex flex-wrap justify-content-between align-items-center mt-5 gap-3'>
-                {data?.slice(0,8).map((product) => <Product key={product.map} product={product}/>)}
+                {data?.slice(0,8).map((product) => <Product key={product.id} product={product}/>)}
 
             </div>
             <div className="mt-5 d-flex justify-content-center align-items-center">

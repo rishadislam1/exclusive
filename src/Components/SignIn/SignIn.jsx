@@ -31,7 +31,7 @@ const handleSignUp = (e)=>{
                 <img src={signin} className="w-100" style={{objectFit: "cover", height: "100%"}}  />
             </div>
             <div className="col-sm-6 d-flex justify-content-center  mt-5 mt-md-0 align-items-center">
-                <div>
+                <div className="w-50">
                     <h2>Create An Account</h2>
                     <p>Enter your details below</p>
                     <form onSubmit={handleSignUp}>

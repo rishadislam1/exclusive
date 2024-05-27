@@ -1,0 +1,7 @@
+.inputPlace::placeholder{
+    color: black!important;
+}
+
+.inputPlace{
+    width: 300px;
+}

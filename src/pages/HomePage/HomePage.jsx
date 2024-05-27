@@ -9,14 +9,29 @@ import NewArraival from "../../Components/HomePageComponents/NewArrival/NewArrai
 import FreeAndFastDelivery from "../../Components/HomePageComponents/FreeAndFastDelivery/FreeAndFastDelivery.jsx";
 import {ProductApi} from "../../ApiRequest/ProductApi.jsx";
 import {useEffect} from "react";
+import flashSellApi from '../../ApiRequest/FlashSellApi.jsx';
+import BestSellingProductApi from '../../ApiRequest/BestSellingProductApi.jsx';
+import fetchCategoryList from '../../ApiRequest/CategoryListApi.jsx';
 
 export default function HomePage() {
 
     useEffect(() => {
         // Call the ProductApi function when the component mounts
         (async () => {
-            await ProductApi()
-        })()
+          await flashSellApi();
+        })();
+    
+          // best selling product
+    
+          (async () => {
+            await BestSellingProductApi();
+          })();
+    
+        // categorylist
+    
+        (async () => {
+          await fetchCategoryList();
+        })();
 
     }, []);
 
